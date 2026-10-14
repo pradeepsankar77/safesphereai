@@ -18,17 +18,21 @@ import {
 import { offlineCacheService, CachedDataSummary } from '@/services/offlineCacheService';
 
 export default function OfflineStatusCard() {
+  const [mounted, setMounted] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
   const [simulateOffline, setSimulateOffline] = useState(false);
   const [cacheStats, setCacheStats] = useState<CachedDataSummary>({
-    alertsCount: 14,
-    sheltersCount: 5,
+    alertsCount: 0,
+    sheltersCount: 0,
     lastLocation: { lat: 13.0827, lng: 80.2707 },
-    lastSynced: 'Just now',
+    lastSynced: 'Synchronizing...',
   });
+  const [cachedAlerts, setCachedAlerts] = useState<any[]>([]);
+  const [cachedShelters, setCachedShelters] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState<'status' | 'cached-alerts' | 'cached-shelters'>('status');
 
   useEffect(() => {
+    setMounted(true);
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
 
@@ -53,6 +57,8 @@ export default function OfflineStatusCard() {
         offlineCacheService.saveLocation({ lat: 13.0827, lng: 80.2707 });
       }
       setCacheStats(offlineCacheService.getCacheSummary());
+      setCachedAlerts(offlineCacheService.getAlerts());
+      setCachedShelters(offlineCacheService.getShelters());
     }
 
     return () => {
@@ -62,8 +68,6 @@ export default function OfflineStatusCard() {
   }, []);
 
   const effectiveOnline = isOnline && !simulateOffline;
-  const cachedAlerts = offlineCacheService.getAlerts();
-  const cachedShelters = offlineCacheService.getShelters();
   const lastLocation = cacheStats.lastLocation || { lat: 13.0827, lng: 80.2707 };
 
   const smsFallbackHref = `sms:112?body=${encodeURIComponent(
@@ -133,7 +137,7 @@ export default function OfflineStatusCard() {
                 <Radio className="w-4 h-4 text-[#C6FF00]" />
                 Cached Disaster Alerts:
               </span>
-              <span className="text-white font-bold">{cacheStats.alertsCount} events</span>
+              <span suppressHydrationWarning className="text-white font-bold">{mounted ? cacheStats.alertsCount : 3} events</span>
             </div>
 
             <div className="p-3.5 rounded-xl bg-black/60 border border-white/5 flex items-center justify-between">
@@ -141,7 +145,7 @@ export default function OfflineStatusCard() {
                 <Building2 className="w-4 h-4 text-[#00E676]" />
                 Cached Relief Shelters:
               </span>
-              <span className="text-white font-bold">{cacheStats.sheltersCount} facilities</span>
+              <span suppressHydrationWarning className="text-white font-bold">{mounted ? cacheStats.sheltersCount : 3} facilities</span>
             </div>
 
             <div className="p-3.5 rounded-xl bg-black/60 border border-white/5 flex items-center justify-between">
@@ -157,7 +161,7 @@ export default function OfflineStatusCard() {
                 <Clock className="w-4 h-4 text-zinc-400" />
                 Last Cache Snapshot:
               </span>
-              <span className="text-zinc-300">{cacheStats.lastSynced}</span>
+              <span suppressHydrationWarning className="text-zinc-300">{mounted ? cacheStats.lastSynced : 'Local Cache Active'}</span>
             </div>
           </div>
 
@@ -204,7 +208,7 @@ export default function OfflineStatusCard() {
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
-                Alerts ({cachedAlerts.length})
+                Alerts (<span suppressHydrationWarning>{mounted ? cachedAlerts.length : 0}</span>)
               </button>
               <button
                 onClick={() => setActiveTab('cached-shelters')}
@@ -214,7 +218,7 @@ export default function OfflineStatusCard() {
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
-                Shelters ({cachedShelters.length})
+                Shelters (<span suppressHydrationWarning>{mounted ? cachedShelters.length : 0}</span>)
               </button>
             </div>
           </div>
