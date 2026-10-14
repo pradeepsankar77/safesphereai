@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Navigation, Building2, Hospital, ArrowRight, ShieldCheck, ChevronDown } from 'lucide-react';
 import ShelterFinder from './ShelterFinder';
+import SafeRouteFinder from '../routes/SafeRouteFinder';
 
 export default function SafeRoutesAndShelters() {
   const [activePanel, setActivePanel] = useState<'01' | '02' | '03'>('02');
@@ -105,23 +106,13 @@ export default function SafeRoutesAndShelters() {
       {/* Expanded Interactive Viewer Tray */}
       <div className="w-full pt-2">
         {activePanel === '01' && (
-          <div className="supernatural-card p-8 border border-[#C6FF00]/30 rounded-2xl space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-white/10">
-              <div className="flex items-center gap-2">
-                <Navigation className="w-5 h-5 text-[#C6FF00]" />
-                <h4 className="text-base font-semibold text-white">
-                  Hazard-Avoidance Evacuation Routing (Configured in Step 7)
-                </h4>
-              </div>
-              <span className="text-xs font-mono text-[#C6FF00]">OSRM ENGINE</span>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-white/10">
+              <h4 className="text-sm font-mono text-[#C6FF00] uppercase">
+                //: HAZARD-AVOIDANCE EVACUATION ROUTE (OSRM)
+              </h4>
             </div>
-            <p className="text-sm text-zinc-400 leading-relaxed font-mono">
-              Safe route finder automatically determines your current coordinates, identifies the closest active disaster perimeter polygon, and routes around a mandatory 5km safety margin toward the nearest operational shelter.
-            </p>
-            <div className="p-4 rounded-xl bg-black/60 border border-white/10 flex items-center justify-between text-xs font-mono text-zinc-400">
-              <span>ALGORITHM: OSRM Polyline Exclude Danger Zone</span>
-              <span className="text-[#00E676]">READY FOR STEP 7</span>
-            </div>
+            <SafeRouteFinder />
           </div>
         )}
 
