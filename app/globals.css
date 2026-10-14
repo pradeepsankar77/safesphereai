@@ -2,19 +2,142 @@
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --accent-lime: #C6FF00;
-    --accent-emerald: #00E676;
-    --card-bg: #0b0b0b;
-    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-black: #000000;
+    --card-dark: #0b0b0b;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-border-hover: rgba(198, 255, 0, 0.3);
+    --lime: #C6FF00;
+    --emerald: #00E676;
+    --lime-glow: rgba(198, 255, 0, 0.25);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-space-grotesk, system-ui, -apple-system, sans-serif);
-    min-height: 100vh;
+    background-color: #000000;
+    color: #EDEDED;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: #C6FF00;
+    color: #000000;
+  }
+}
+
+/* Dotted grid texture */
+.dotted-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dotted-grid-lime {
+  background-image: radial-gradient(rgba(198, 255, 0, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Supernatural Card with corner glow on hover */
+.supernatural-card {
+  position: relative;
+  background-color: #0b0b0b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.supernatural-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at top right, rgba(198, 255, 0, 0.12), transparent 70%);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0.5;
+}
+
+.supernatural-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 255, 0, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(0, 230, 118, 0.15), 0 0 20px -5px rgba(198, 255, 0, 0.12);
+}
+
+.supernatural-card:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Lime-to-emerald gradient button */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #C6FF00 0%, #00E676 100%);
+  color: #000000;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 20px -5px rgba(198, 255, 0, 0.4);
+}
+
+.btn-primary-gradient:hover {
+  box-shadow: 0 0 30px 2px rgba(0, 230, 118, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-secondary-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-secondary-outline:hover {
+  border-color: #C6FF00;
+  color: #C6FF00;
+  box-shadow: 0 0 15px rgba(198, 255, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+/* SOS Pulsing Ring */
+@keyframes sosPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7), 0 0 20px rgba(198, 255, 0, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(239, 68, 68, 0), 0 0 30px rgba(198, 255, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0), 0 0 20px rgba(198, 255, 0, 0.5);
+  }
+}
+
+.sos-pulse-ring {
+  animation: sosPulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+/* Background green glow blobs */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
