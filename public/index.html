@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeSphere AI | Emergency Disaster Management & AI Risk Assessment</title>
+  <link rel="icon" type="image/svg+xml" href="public/icon-192.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-black: #000000;
+      --card-bg: #0b0b0b;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --lime: #C6FF00;
+      --emerald: #00E676;
+      --amber: #FFB300;
+      --red: #FF5252;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: #EDEDED;
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .tag {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--lime);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 300;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 span {
+      color: var(--lime);
+      font-weight: 700;
+    }
+
+    p.subtitle {
+      color: #A1A1AA;
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .quick-launch {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .launch-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .launch-card:hover {
+      border-color: rgba(198, 255, 0, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(198, 255, 0, 0.1);
+    }
+
+    .launch-card h3 {
+      font-size: 1.25rem;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .launch-card p {
+      color: #71717A;
+      font-size: 0.875rem;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge {
+      font-family: monospace;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      display: inline-block;
+      width: fit-content;
+      font-weight: 600;
+    }
+
+    .badge-lime {
+      background: rgba(198, 255, 0, 0.15);
+      border: 1px solid rgba(198, 255, 0, 0.3);
+      color: var(--lime);
+    }
+
+    .badge-emerald {
+      background: rgba(0, 230, 118, 0.15);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      color: var(--emerald);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+
+    .feature-card h4 {
+      font-size: 1.05rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: #A1A1AA;
+      font-size: 0.875rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .arch-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      margin-bottom: 3rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #D4D4D8;
+      overflow-x: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--card-border);
+      color: #71717A;
+      font-size: 0.85rem;
+      font-family: monospace;
+      width: 100%;
+    }
+
+    footer a {
+      color: var(--lime);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="tag">//: planetary hazard defense network</span>
+      <h1>SafeSphere <span>AI</span></h1>
+      <p class="subtitle">
+        Intelligent disaster management platform integrating real-time telemetry, machine learning risk classification (Random Forest & XGBoost), hazard-avoiding evacuation routing, and offline zero-grid survival mode.
+      </p>
+    </header>
+
+    <!-- Quick Localhost Navigation -->
+    <h2 class="section-title">⚡ Localhost Service Gateway</h2>
+    <div class="quick-launch">
+      <a href="http://localhost:3000" target="_blank" class="launch-card">
+        <div>
+          <h3>🌐 SafeSphere Dashboard</h3>
+          <p>Next.js 16 interactive UI featuring Live Disaster Map, ML Risk Classifier, Safe Routes, and SOS.</p>
+        </div>
+        <span class="badge badge-lime">http://localhost:3000</span>
+      </a>
+
+      <a href="http://127.0.0.1:8000" target="_blank" class="launch-card">
+        <div>
+          <h3>🤖 FastAPI ML Backend</h3>
+          <p>Python 3.11 inference service running Random Forest & XGBoost multi-hazard classification.</p>
+        </div>
+        <span class="badge badge-emerald">http://127.0.0.1:8000</span>
+      </a>
+
+      <a href="http://127.0.0.1:8000/docs" target="_blank" class="launch-card">
+        <div>
+          <h3>📚 Swagger API Docs</h3>
+          <p>Interactive OpenAPI documentation for /predict-risk, /model/metrics, and /health.</p>
+        </div>
+        <span class="badge badge-lime">/docs</span>
+      </a>
+    </div>
+
+    <!-- Core Features Grid -->
+    <h2 class="section-title">🛰️ Core System Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="tag">//: 01. live map</span>
+        <h4>Planetary Hazard Radar</h4>
+        <p>Real-time ingestion of NASA EONET and USGS earthquake telemetry rendered on OpenStreetMap dark basemap tiles with 5km perimeter buffer polygons.</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="tag">//: 02. machine learning</span>
+        <h4>Random Forest & XGBoost Inference</h4>
+        <p>Statistical hazard classification trained on documented ECMWF ERA5 disaster observations. Predicts Low, Medium, and High emergency risk with 93.2% accuracy.</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="tag">//: 03. safe routing</span>
+        <h4>Hazard-Evading Evacuation Paths</h4>
+        <p>Dynamic pathfinding via OSRM that strictly routes around active disaster clusters to ensure safe civil evacuation.</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="tag">//: 04. shelters & trauma</span>
+        <h4>Shelters & Emergency Medical Finder</h4>
+        <p>Live OpenStreetMap Overpass discovery of operational relief camps, emergency staging facilities, and hospitals.</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="tag">//: 05. offline resilience</span>
+        <h4>Zero-Grid Emergency Mode</h4>
+        <p>PWA service worker with precached map tiles, stored shelter registry, and instant one-tap pre-filled GSM SMS fallback.</p>
+      </div>
+
+      <div class="feature-card">
+        <span class="tag">//: 06. emergency audio</span>
+        <h4>Multilingual Voice Alerts</h4>
+        <p>Automated speech synthesis broadcasting emergency alerts across English, Tamil (தமிழ்), and Hindi (हिन्दी).</p>
+      </div>
+    </div>
+
+    <!-- Architecture Blueprint -->
+    <h2 class="section-title">⚙️ System Architecture</h2>
+    <div class="arch-box">
+SafeSphere AI Repository
+├── app/                             # Next.js 16 App Router (React 19, TypeScript, Tailwind)
+│   ├── page.tsx                     # Main Dashboard Flow
+│   ├── layout.tsx                   # Root HTML Shell & Font Config
+│   └── api/                         # Next.js Server-Side API Proxies
+│       ├── ml-risk/route.ts         # ML Risk Prediction Proxy
+│       ├── disasters/route.ts       # NASA EONET & USGS Ingestion
+│       └── shelters/route.ts        # Overpass Shelter Discovery
+├── components/                      # Modular UI Components
+│   ├── map/LiveDisasterMap.tsx      # OpenStreetMap Leaflet Radar
+│   ├── risk/MLRiskAssessmentPanel.tsx # Dual ML Classifier & Comparison Panel
+│   └── offline/OfflineStatusCard.tsx# Zero-Grid Cache & SMS Fallback
+├── ml_backend/                      # Python Machine Learning Backend
+│   ├── api/main.py                  # FastAPI Service (Port 8000)
+│   ├── models/train.py              # RandomForest & XGBoost Training Pipeline
+│   └── artifacts/                   # Serialized Models (.joblib) & Validation Metrics
+└── public/                          # Static Assets & PWA Service Worker (sw.js)
+    </div>
+
+    <footer>
+      <p>SafeSphere AI &bull; Open-Source Emergency Response Platform &bull; <a href="https://github.com/pradeepsankar77/safesphereai" target="_blank">GitHub Repository: pradeepsankar77/safesphereai</a></p>
+    </footer>
+  </div>
+</body>
+</html>
