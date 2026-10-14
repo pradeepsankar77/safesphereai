@@ -9,6 +9,7 @@ import HeroSection from '@/components/hero/HeroSection';
 import WhySafeSphereGrid from '@/components/features/WhySafeSphereGrid';
 import Footer from '@/components/layout/Footer';
 import LiveDisasterMap from '@/components/map/LiveDisasterMap';
+import RiskForecastSection from '@/components/risk/RiskForecastSection';
 import SafeRoutesAndShelters from '@/components/shelters/SafeRoutesAndShelters';
 import EmergencySOSSection from '@/components/sos/EmergencySOSSection';
 import { 
@@ -58,30 +59,8 @@ export default function HomePage() {
           <LiveDisasterMap />
         </section>
 
-        {/* Section 4: Risk Forecast Anchor */}
-        <section id="risk-forecast" className="py-20 border-t border-white/5 scroll-mt-12">
-          <div className="mb-8">
-            <span className="text-xs font-mono text-[#C6FF00] tracking-widest uppercase block mb-1">
-              //: risk forecast
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-white">
-              predictive <span className="text-[#00E676] font-semibold">severity index</span>
-            </h2>
-            <p className="text-sm text-zinc-400 mt-2">
-              Open-Meteo 24–72h atmospheric forecasting fused with Claude AI plain-language reasoning.
-            </p>
-          </div>
-
-          <div className="supernatural-card p-8 border border-white/10 rounded-2xl min-h-[300px] flex flex-col items-center justify-center text-center">
-            <div className="w-14 h-14 rounded-full bg-[#00E676]/10 border border-[#00E676]/30 flex items-center justify-center mb-4">
-              <Activity className="w-7 h-7 text-[#00E676]" />
-            </div>
-            <h3 className="text-xl font-medium text-white mb-2">AI Risk Prediction Module (Step 6)</h3>
-            <p className="text-xs text-zinc-400 font-mono">
-              Formula: w1×rainfall + w2×wind + w3×proximity + w4×seismic magnitude
-            </p>
-          </div>
-        </section>
+        {/* Section 4: Risk Forecast */}
+        <RiskForecastSection />
 
         {/* Section 5: Safe Routes & Shelters Anchor */}
         {/* Section 5: Safe Routes & Shelters */}
