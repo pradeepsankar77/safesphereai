@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 
@@ -19,8 +19,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'SafeSphere AI | Predict. Protect. Respond.',
   description: 'AI-Powered Emergency Response & Disaster Management System with real-time hazard mapping, AI risk prediction, and emergency dispatch.',
+};
+
+export const viewport: Viewport = {
   themeColor: '#000000',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
