@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <rect width="192" height="192" rx="36" fill="#000000" />
+  <circle cx="96" cy="96" r="64" fill="none" stroke="url(#limeGrad)" stroke-width="8" stroke-dasharray="16 8" />
+  <circle cx="96" cy="96" r="40" fill="#0b0b0b" stroke="#C6FF00" stroke-width="4" />
+  <path d="M96 70v30l20 12" stroke="#00E676" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="96" cy="96" r="6" fill="#C6FF00" />
+  <defs>
+    <linearGradient id="limeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C6FF00" />
+      <stop offset="100%" stop-color="#00E676" />
+    </linearGradient>
+  </defs>
+</svg>

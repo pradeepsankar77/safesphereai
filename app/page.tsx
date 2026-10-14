@@ -12,6 +12,7 @@ import LiveDisasterMap from '@/components/map/LiveDisasterMap';
 import RiskForecastSection from '@/components/risk/RiskForecastSection';
 import SafeRoutesAndShelters from '@/components/shelters/SafeRoutesAndShelters';
 import VoiceAlertsSection from '@/components/voice/VoiceAlertsSection';
+import OfflineStatusCard from '@/components/offline/OfflineStatusCard';
 import EmergencySOSSection from '@/components/sos/EmergencySOSSection';
 import { 
   Map, 
@@ -84,30 +85,8 @@ export default function HomePage() {
         {/* Section 6: Multilingual Voice Alerts */}
         <VoiceAlertsSection />
 
-        {/* Section 7: Offline Mode Anchor */}
-        <section id="offline-mode" className="py-20 border-t border-white/5 scroll-mt-12">
-          <div className="mb-8">
-            <span className="text-xs font-mono text-[#C6FF00] tracking-widest uppercase block mb-1">
-              //: offline mode
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-white">
-              zero-grid <span className="text-[#C6FF00] font-semibold">resilience</span>
-            </h2>
-            <p className="text-sm text-zinc-400 mt-2">
-              PWA service worker, cached tiles, saved alerts, and SMS fallback.
-            </p>
-          </div>
-
-          <div className="supernatural-card p-8 border border-white/10 rounded-2xl flex flex-col items-center justify-center text-center">
-            <div className="w-14 h-14 rounded-full bg-zinc-800/60 border border-white/10 flex items-center justify-center mb-4">
-              <WifiOff className="w-7 h-7 text-zinc-400" />
-            </div>
-            <h3 className="text-xl font-medium text-white mb-2">Offline Emergency PWA (Step 9)</h3>
-            <p className="text-xs text-zinc-400 font-mono">
-              Full offline capability with local cache & SMS transmission
-            </p>
-          </div>
-        </section>
+        {/* Section 7: Offline Emergency Mode */}
+        <OfflineStatusCard />
 
         {/* Section 8: Emergency SOS */}
         <EmergencySOSSection />

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
+import ServiceWorkerRegister from '@/components/offline/ServiceWorkerRegister';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -19,6 +20,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'SafeSphere AI | Predict. Protect. Respond.',
   description: 'AI-Powered Emergency Response & Disaster Management System with real-time hazard mapping, AI risk prediction, and emergency dispatch.',
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/icon-192.svg',
+    apple: '/icon-192.svg',
+  },
 };
 
 export const viewport: Viewport = {
@@ -37,8 +43,10 @@ export default function RootLayout({
     <html lang="en" className={`dark ${spaceGrotesk.variable} ${inter.variable}`}>
       <head>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="bg-black text-white font-sans antialiased selection:bg-[#C6FF00] selection:text-black min-h-screen relative overflow-x-hidden">
+        <ServiceWorkerRegister />
         {children}
       </body>
     </html>
