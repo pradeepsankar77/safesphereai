@@ -1,8 +1,7 @@
 {
   "name": "dms",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "SafeSphere AI Disaster Management Platform",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
