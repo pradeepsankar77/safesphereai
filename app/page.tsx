@@ -10,6 +10,7 @@ import WhySafeSphereGrid from '@/components/features/WhySafeSphereGrid';
 import Footer from '@/components/layout/Footer';
 import LiveDisasterMap from '@/components/map/LiveDisasterMap';
 import SafeRoutesAndShelters from '@/components/shelters/SafeRoutesAndShelters';
+import EmergencySOSSection from '@/components/sos/EmergencySOSSection';
 import { 
   Map, 
   Activity, 
@@ -152,30 +153,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Section 8: Emergency SOS Anchor */}
-        <section id="sos-section" className="py-24 border-t border-white/5 scroll-mt-12 text-center">
-          <div className="max-w-xl mx-auto space-y-6">
-            <span className="text-xs font-mono text-red-500 tracking-widest uppercase block">
-              //: emergency distress signal
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-light text-white">
-              one-tap <span className="text-red-500 font-semibold">rescue beacon</span>
-            </h2>
-            <p className="text-sm text-zinc-400">
-              Immediate dispatch of GPS coordinates via Supabase, WhatsApp and SMS protocols.
-            </p>
-
-            <div className="pt-4 flex justify-center">
-              <button 
-                className="w-40 h-40 rounded-full bg-gradient-to-br from-red-600 via-[#C6FF00] to-[#00E676] text-black font-black text-lg uppercase tracking-wider flex flex-col items-center justify-center gap-2 shadow-[0_0_50px_rgba(239,68,68,0.4)] sos-pulse-ring cursor-pointer hover:scale-105 transition-transform"
-                aria-label="One-tap Emergency SOS"
-              >
-                <AlertTriangle className="w-8 h-8 text-black fill-black" />
-                <span>SOS NOW</span>
-              </button>
-            </div>
-          </div>
-        </section>
+        {/* Section 8: Emergency SOS */}
+        <EmergencySOSSection />
       </div>
 
       {/* Footer */}
