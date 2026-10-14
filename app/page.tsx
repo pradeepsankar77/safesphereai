@@ -8,6 +8,7 @@ import ScrollToTop from '@/components/navigation/ScrollToTop';
 import HeroSection from '@/components/hero/HeroSection';
 import WhySafeSphereGrid from '@/components/features/WhySafeSphereGrid';
 import Footer from '@/components/layout/Footer';
+import LiveDisasterMap from '@/components/map/LiveDisasterMap';
 import { 
   Map, 
   Activity, 
@@ -38,7 +39,7 @@ export default function HomePage() {
         {/* Section 2: Why SafeSphere Grid */}
         <WhySafeSphereGrid />
 
-        {/* Section 3: Live Disaster Map Anchor / Skeleton */}
+        {/* Section 3: Live Disaster Map */}
         <section id="disaster-map" className="py-20 border-t border-white/5 scroll-mt-12">
           <div className="mb-8">
             <span className="text-xs font-mono text-[#C6FF00] tracking-widest uppercase block mb-1">
@@ -48,23 +49,11 @@ export default function HomePage() {
               planetary hazard <span className="text-[#C6FF00] font-semibold">radar</span>
             </h2>
             <p className="text-sm text-zinc-400 mt-2">
-              NASA EONET telemetry and USGS real-time seismic feeds.
+              NASA EONET telemetry and USGS real-time seismic feeds with instant buffer perimeter detection.
             </p>
           </div>
 
-          <div className="supernatural-card p-8 border border-white/10 rounded-2xl min-h-[420px] flex flex-col items-center justify-center text-center">
-            <div className="w-16 h-16 rounded-full bg-[#C6FF00]/10 border border-[#C6FF00]/30 flex items-center justify-center mb-4 shadow-[0_0_25px_rgba(198,255,0,0.2)]">
-              <Map className="w-8 h-8 text-[#C6FF00]" />
-            </div>
-            <h3 className="text-xl font-medium text-white mb-2">Live Map Ready For Integration (Step 3)</h3>
-            <p className="text-xs sm:text-sm text-zinc-400 max-w-md mb-4 font-mono">
-              Filters: Floods · Cyclones · Earthquakes · Wildfires with Supabase Realtime alerts ticker
-            </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-xs text-zinc-400">
-              <Clock className="w-3.5 h-3.5 text-[#00E676]" />
-              <span>Step 3 will mount the interactive Leaflet + OSM telemetry engine</span>
-            </div>
-          </div>
+          <LiveDisasterMap />
         </section>
 
         {/* Section 4: Risk Forecast Anchor */}
