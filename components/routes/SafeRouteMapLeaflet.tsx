@@ -70,9 +70,8 @@ export default function SafeRouteMapLeaflet({
         style={{ background: '#050505' }}
       >
         <TileLayer
-          attribution='&copy; <a href="https://carto.com/">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          maxZoom={19}
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; OpenStreetMap contributors"
         />
 
         <MapBoundsController coordinates={routeCoordinates} />

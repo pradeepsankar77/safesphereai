@@ -96,11 +96,10 @@ export default function DisasterMapLeaflet({
         className="w-full h-full z-10"
         style={{ background: '#050505' }}
       >
-        {/* CartoDB Dark Matter Dark Tile Layer for Supernatural Look */}
+        {/* Standard OpenStreetMap Tile Layer (Free, no API key required) */}
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          maxZoom={19}
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; OpenStreetMap contributors"
         />
 
         <MapController selectedEvent={selectedEvent} />

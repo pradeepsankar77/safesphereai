@@ -39,8 +39,8 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Cache map tiles (OpenStreetMap & CARTO Dark tiles)
-  if (url.hostname.includes('tile.openstreetmap.org') || url.hostname.includes('basemaps.cartocdn.com')) {
+  // Cache map tiles (OpenStreetMap tiles)
+  if (url.hostname.includes('tile.openstreetmap.org')) {
     event.respondWith(
       caches.open(CACHE_NAME).then(async (cache) => {
         const cachedResponse = await cache.match(event.request);
