@@ -10,6 +10,7 @@ import WhySafeSphereGrid from '@/components/features/WhySafeSphereGrid';
 import Footer from '@/components/layout/Footer';
 import LiveDisasterMap from '@/components/map/LiveDisasterMap';
 import RiskForecastSection from '@/components/risk/RiskForecastSection';
+import MLRiskAssessmentPanel from '@/components/risk/MLRiskAssessmentPanel';
 import SafeRoutesAndShelters from '@/components/shelters/SafeRoutesAndShelters';
 import VoiceAlertsSection from '@/components/voice/VoiceAlertsSection';
 import OfflineStatusCard from '@/components/offline/OfflineStatusCard';
@@ -63,6 +64,9 @@ export default function HomePage() {
 
         {/* Section 4: Risk Forecast */}
         <RiskForecastSection />
+
+        {/* Section 4B: Machine Learning Risk Assessment */}
+        <MLRiskAssessmentPanel />
 
         {/* Section 5: Safe Routes & Shelters Anchor */}
         {/* Section 5: Safe Routes & Shelters */}

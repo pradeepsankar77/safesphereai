@@ -1,0 +1,146 @@
+{
+  "dataset_path": "C:\\Users\\PRADEEP\\OneDrive\\Desktop\\DMS\\ml_backend\\data\\historical_disaster_weather.csv",
+  "total_records": 365,
+  "total_features": 10,
+  "feature_names": [
+    "precipitation_sum",
+    "wind_gusts_10m_max",
+    "wind_speed_10m_max",
+    "surface_pressure_mean",
+    "relative_humidity_2m_mean",
+    "temperature_mean",
+    "temperature_2m_max",
+    "temperature_2m_min",
+    "latitude",
+    "longitude"
+  ],
+  "target_column": "risk_level",
+  "class_distribution": {
+    "Low": {
+      "count": 231,
+      "percentage": 63.29
+    },
+    "Medium": {
+      "count": 116,
+      "percentage": 31.78
+    },
+    "High": {
+      "count": 18,
+      "percentage": 4.93
+    }
+  },
+  "imbalance_ratio": {
+    "majority_to_minority": 12.83
+  },
+  "duplicate_records": 0,
+  "missing_values": {
+    "date": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "elevation": 0,
+    "temperature_2m_max": 0,
+    "temperature_2m_min": 0,
+    "temperature_mean": 0,
+    "precipitation_sum": 0,
+    "rain_sum": 0,
+    "wind_speed_10m_max": 0,
+    "wind_gusts_10m_max": 0,
+    "surface_pressure_mean": 0,
+    "relative_humidity_2m_mean": 0,
+    "event_name": 0,
+    "event_category": 0,
+    "source": 0,
+    "risk_level": 0
+  },
+  "feature_statistics": {
+    "precipitation_sum": {
+      "min": 0.0,
+      "max": 257.3,
+      "mean": 7.85,
+      "std": 25.19,
+      "missing": 0
+    },
+    "wind_gusts_10m_max": {
+      "min": 15.5,
+      "max": 182.5,
+      "mean": 41.03,
+      "std": 18.93,
+      "missing": 0
+    },
+    "wind_speed_10m_max": {
+      "min": 7.9,
+      "max": 105.6,
+      "mean": 20.91,
+      "std": 10.94,
+      "missing": 0
+    },
+    "surface_pressure_mean": {
+      "min": 980.9,
+      "max": 1016.9,
+      "mean": 1008.71,
+      "std": 5.01,
+      "missing": 0
+    },
+    "relative_humidity_2m_mean": {
+      "min": 25.0,
+      "max": 94.0,
+      "mean": 76.79,
+      "std": 11.57,
+      "missing": 0
+    },
+    "temperature_mean": {
+      "min": 16.3,
+      "max": 34.55,
+      "mean": 25.86,
+      "std": 3.27,
+      "missing": 0
+    },
+    "temperature_2m_max": {
+      "min": 21.3,
+      "max": 39.1,
+      "mean": 29.3,
+      "std": 3.07,
+      "missing": 0
+    },
+    "temperature_2m_min": {
+      "min": 10.1,
+      "max": 30.0,
+      "mean": 22.42,
+      "std": 4.05,
+      "missing": 0
+    },
+    "latitude": {
+      "min": 9.9312,
+      "max": 22.8,
+      "mean": 17.06,
+      "std": 5.09,
+      "missing": 0
+    },
+    "longitude": {
+      "min": 69.7,
+      "max": 88.3639,
+      "mean": 79.56,
+      "std": 6.29,
+      "missing": 0
+    }
+  },
+  "documented_events_count": 15,
+  "documented_events": [
+    "Cyclone Michaung",
+    "Cyclone Biparjoy",
+    "Cyclone Mandous",
+    "Cyclone Yaas",
+    "Cyclone Tauktae",
+    "Cyclone Amphan",
+    "Cyclone Fani",
+    "Kerala Extreme Monsoon Floods",
+    "Chennai Historic Floods",
+    "Cyclone Vardah",
+    "Normal Seasonal Baseline (Chennai)",
+    "Normal Seasonal Baseline (Gujarat)",
+    "Normal Seasonal Baseline (Kolkata)",
+    "Normal Seasonal Baseline (Kerala)",
+    "Normal Seasonal Baseline (Odisha)"
+  ],
+  "source": "ECMWF ERA5 Reanalysis via Open-Meteo Historical Archive"
+}

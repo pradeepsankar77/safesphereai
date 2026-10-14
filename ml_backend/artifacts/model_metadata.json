@@ -1,0 +1,31 @@
+{
+  "status": "trained",
+  "preferred_model": "XGBoost",
+  "feature_names": [
+    "precipitation_sum",
+    "wind_gusts_10m_max",
+    "wind_speed_10m_max",
+    "surface_pressure_mean",
+    "relative_humidity_2m_mean",
+    "temperature_mean",
+    "temperature_2m_max",
+    "temperature_2m_min",
+    "latitude",
+    "longitude"
+  ],
+  "class_labels": {
+    "0": "Low",
+    "1": "Medium",
+    "2": "High"
+  },
+  "models_available": [
+    "Random Forest",
+    "XGBoost"
+  ],
+  "artifacts": {
+    "random_forest": "rf_model.joblib",
+    "xgboost": "xgb_model.joblib",
+    "comparison": "model_comparison.json",
+    "dataset_summary": "dataset_summary.json"
+  }
+}

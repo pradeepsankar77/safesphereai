@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { 
   Map, 
   Activity, 
+  Cpu,
   Navigation, 
   AlertTriangle, 
   Menu, 
@@ -70,6 +71,12 @@ export default function MobileNav() {
             className="flex items-center gap-2 p-2.5 rounded-xl bg-zinc-900/60 text-zinc-300 hover:text-white border border-white/5"
           >
             <Activity className="w-4 h-4 text-amber-400" /> Risk Forecast
+          </button>
+          <button 
+            onClick={() => scrollTo('ml-risk')} 
+            className="flex items-center gap-2 p-2.5 rounded-xl bg-zinc-900/60 text-zinc-300 hover:text-white border border-white/5"
+          >
+            <Cpu className="w-4 h-4 text-[#C6FF00]" /> ML Classifier
           </button>
           <button 
             onClick={() => scrollTo('routes-shelters')} 
