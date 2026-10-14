@@ -9,6 +9,7 @@ import HeroSection from '@/components/hero/HeroSection';
 import WhySafeSphereGrid from '@/components/features/WhySafeSphereGrid';
 import Footer from '@/components/layout/Footer';
 import LiveDisasterMap from '@/components/map/LiveDisasterMap';
+import SafeRoutesAndShelters from '@/components/shelters/SafeRoutesAndShelters';
 import { 
   Map, 
   Activity, 
@@ -82,6 +83,7 @@ export default function HomePage() {
         </section>
 
         {/* Section 5: Safe Routes & Shelters Anchor */}
+        {/* Section 5: Safe Routes & Shelters */}
         <section id="routes-shelters" className="py-20 border-t border-white/5 scroll-mt-12">
           <div className="mb-8">
             <span className="text-xs font-mono text-[#C6FF00] tracking-widest uppercase block mb-1">
@@ -91,27 +93,11 @@ export default function HomePage() {
               evacuation & <span className="text-[#C6FF00] font-semibold">life safety</span>
             </h2>
             <p className="text-sm text-zinc-400 mt-2">
-              Automated pathfinding avoiding active disaster buffer perimeters.
+              Automated pathfinding avoiding active disaster buffer perimeters, live Overpass shelter camps, and trauma centers.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="supernatural-card p-6 border border-white/10">
-              <span className="text-2xl font-light text-[#C6FF00] font-mono">01</span>
-              <h4 className="text-base font-semibold text-white mt-2">Safe Route</h4>
-              <p className="text-xs text-zinc-400 mt-1 font-mono">OSRM path avoiding 5km hazard perimeters</p>
-            </div>
-            <div id="shelters" className="supernatural-card p-6 border border-white/10">
-              <span className="text-2xl font-light text-[#00E676] font-mono">02</span>
-              <h4 className="text-base font-semibold text-white mt-2">Shelters</h4>
-              <p className="text-xs text-zinc-400 mt-1 font-mono">OpenStreetMap Overpass emergency assembly camps</p>
-            </div>
-            <div className="supernatural-card p-6 border border-white/10">
-              <span className="text-2xl font-light text-white font-mono">03</span>
-              <h4 className="text-base font-semibold text-white mt-2">Hospitals</h4>
-              <p className="text-xs text-zinc-400 mt-1 font-mono">Live trauma centers sorted by straight-line distance</p>
-            </div>
-          </div>
+          <SafeRoutesAndShelters />
         </section>
 
         {/* Section 6: Voice Alerts Anchor */}
