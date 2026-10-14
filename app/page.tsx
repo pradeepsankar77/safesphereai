@@ -11,6 +11,7 @@ import Footer from '@/components/layout/Footer';
 import LiveDisasterMap from '@/components/map/LiveDisasterMap';
 import RiskForecastSection from '@/components/risk/RiskForecastSection';
 import SafeRoutesAndShelters from '@/components/shelters/SafeRoutesAndShelters';
+import VoiceAlertsSection from '@/components/voice/VoiceAlertsSection';
 import EmergencySOSSection from '@/components/sos/EmergencySOSSection';
 import { 
   Map, 
@@ -80,32 +81,8 @@ export default function HomePage() {
           <SafeRoutesAndShelters />
         </section>
 
-        {/* Section 6: Voice Alerts Anchor */}
-        <section id="voice-alerts" className="py-20 border-t border-white/5 scroll-mt-12">
-          <div className="mb-8">
-            <span className="text-xs font-mono text-[#C6FF00] tracking-widest uppercase block mb-1">
-              //: speak your language
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-white">
-              multilingual <span className="text-[#00E676] font-semibold">voice broadcast</span>
-            </h2>
-            <p className="text-sm text-zinc-400 mt-2">
-              Synthesized voice delivery in English, Tamil, and Hindi.
-            </p>
-          </div>
-
-          <div className="supernatural-card p-8 border border-white/10 rounded-2xl flex flex-col items-center justify-center text-center">
-            <div className="w-14 h-14 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-4">
-              <Volume2 className="w-7 h-7 text-cyan-400" />
-            </div>
-            <h3 className="text-xl font-medium text-white mb-2">Multilingual Voice Alerts (Step 8)</h3>
-            <div className="flex gap-2 mt-2">
-              <span className="px-3 py-1 rounded-lg bg-zinc-900 border border-white/10 text-xs text-zinc-300">English</span>
-              <span className="px-3 py-1 rounded-lg bg-zinc-900 border border-white/10 text-xs text-zinc-300">தமிழ் (Tamil)</span>
-              <span className="px-3 py-1 rounded-lg bg-zinc-900 border border-white/10 text-xs text-zinc-300">हिन्दी (Hindi)</span>
-            </div>
-          </div>
-        </section>
+        {/* Section 6: Multilingual Voice Alerts */}
+        <VoiceAlertsSection />
 
         {/* Section 7: Offline Mode Anchor */}
         <section id="offline-mode" className="py-20 border-t border-white/5 scroll-mt-12">
