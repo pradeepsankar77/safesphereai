@@ -156,6 +156,24 @@ class PredictRiskResponse(BaseModel):
     safety_disclaimer: str
 
 
+@app.get("/", tags=["System"])
+def root():
+    """Root entry point providing service links."""
+    return {
+        "service": "SafeSphere AI - Machine Learning Disaster Risk Backend",
+        "status": "online",
+        "endpoints": {
+            "swagger_docs": "/docs",
+            "redoc": "/redoc",
+            "health": "/health",
+            "model_status": "/model/status",
+            "model_metrics": "/model/metrics",
+            "predict_risk": "/predict-risk",
+        },
+        "frontend": "http://localhost:3000",
+    }
+
+
 @app.get("/health", tags=["System"])
 def health_check():
     """Returns service health status and loaded model states."""
